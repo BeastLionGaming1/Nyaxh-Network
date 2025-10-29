@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nyaxh Networks</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="shortcut icon" href="/logo.png" type="image/x-icon" />
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">NYAXH NETWORK</div>
+      <div class="tagline">Premium WiFi Access</div>
+      <a href="https://nyaxh.pro" class="url-a">
+      <div class="url">https://nyaxh.pro</div>
+      </a>
+    </header>
+    
+    <div class="timer" id="timer">
+      Your session will expire in: <span id="countdown">15:00</span>
+    </div>
+    
+    <div class="main-content">
+      <div class="packages">
+        <h2><i class="fas fa-wifi"></i> WI-FI Packages</h2>
+        
+        <div class="package" onclick="openModal(1, '1 HOUR', '1 Hour', 9)">
+          <div class="package-info">
+            <h3>1 HOUR</h3>
+            <p>Valid For: 1 Hour</p>
+          </div>
+          <div class="price">KES 9</div>
+        </div>
+        
+        <div class="package" onclick="openModal(2, '2 HOURS', '2 Hours', 15)">
+          <div class="package-info">
+            <h3>2 HOURS</h3>
+            <p>Valid For: 2 Hours</p>
+          </div>
+          <div class="price">KES 15</div>
+        </div>
+        
+        <div class="package" onclick="openModal(3, '3 HOURS', '3 Hours', 19)">
+          <div class="package-info">
+            <h3>3 HOURS</h3>
+            <p>Valid For: 3 Hours</p>
+          </div>
+          <div class="price">KES 19</div>
+        </div>
+        
+        <div class="package" onclick="openModal(4, '12 HOURS', '12 Hours', 39)">
+          <div class="package-info">
+            <h3>12 HOURS</h3>
+            <p>Valid For: 12 Hours</p>
+          </div>
+          <div class="price">KES 39</div>
+        </div>
+        
+        <div class="package" onclick="openModal(5, '24 HOURS', '24 Hours', 49)">
+          <div class="package-info">
+            <h3>24 HOURS</h3>
+            <p>Valid For: 24 Hours</p>
+          </div>
+          <div class="price">KES 49</div>
+        </div>
+        
+        <div class="package" onclick="openModal(6, '1 WEEK', '7 Days', 169)">
+          <div class="package-info">
+            <h3>1 WEEK</h3>
+            <p>Valid For: 7 Days</p>
+          </div>
+          <div class="price">KES 169</div>
+        </div>
+        
+        <div class="package" onclick="openModal(7, '1 MONTH', '1 Month', 599)">
+          <div class="package-info">
+            <h3>1 MONTH</h3>
+            <p>Valid For: 1 Month</p>
+          </div>
+          <div class="price">KES 599</div>
+        </div>
+      </div>
+      
+      <div class="login-section">
+        <h2><i class="fas fa-sign-in-alt"></i> Login Options</h2>
+        
+        <div class="login-option">
+          <h3><i class="fas fa-ticket-alt"></i> Voucher Login</h3>
+          <input type="text" placeholder="Enter voucher code...">
+          <button><i class="fas fa-plug"></i> Connect with Voucher</button>
+        </div>
+        
+        <div class="login-option">
+          <h3><i class="fas fa-comment-sms"></i> M-Pesa Transaction Login</h3>
+          <input type="text" placeholder="Paste M-Pesa Transaction Code">
+          <button><i class="fas fa-comment"></i> Connect Using Message</button>
+        </div>
+        
+        <div class="promo-note">
+          <p><i class="fas fa-bullhorn"></i> Enable Promotion Messages</p>
+          <p>Dial *456*9*5*5*1# to enable promotion messages</p>
+        </div>
+        
+      <a href="tel: 0714458773" class="support-a">
+        <div class="support" href="tel: 0714458773">
+          <p><i class="fas fa-headset"></i> Support: 0714458773</p>
+        
+        </a>
+      </div>
+    </div>
+    
+    <footer>
+      <p>&copy; 2025 NYAXH NETWORK • Premium WiFi Access • https://nyaxh.pro</p>
+    </footer>
+  </div>
+  
+  <!-- Purchase Modal -->
+  <div class="modal" id="purchaseModal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      
+      <div class="modal-header">
+        <h2><i class="fas fa-shopping-cart"></i> Purchase Package</h2>
+      </div>
+      
+      <div class="modal-body">
+        <div class="package-details">
+          <div>
+            <h3 id="modalPackageName">1 HOUR</h3>
+            <p id="modalPackageValidity">Valid For: 1 Hour</p>
+          </div>
+          <div class="price" id="modalPackagePrice">KES 9</div>
+        </div>
+        
+        <div class="form-group">
+          <label for="mobileNumber"><i class="fas fa-mobile-alt"></i> Mobile Number</label>
+          <input class="number" type="text" id="mobileNumber" placeholder="Enter your mobile number" oninput="formatPhoneNumber(this)">
+        </div>
+        
+        <div class="dropdown" id="networkDropdown">
+    <div class="dropdown-btn">
+      <span id="selected">Mpesa</span>
+      <span class="arrow">▼</span>
+    </div>
+    <div class="dropdown-content">
+      <div data-value="mpesa" class="active">Mpesa</div>
+      <div data-value="airtel">Airtel KE</div>
+    </div>
+  </div>
+      </div>
+      
+      <div class="modal-footer">
+        <button class="btn btn-cancel" onclick="closeModal()">Cancel</button>
+        <button class="btn btn-buy" onclick="processPurchase()">Buy Now</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="webpack.config.js"></script>
+  
+</body>
+
+</html>
