@@ -1,0 +1,78 @@
+:root {
+  --button: #77B1FF;
+  --text: #2FA5E8;
+  --primary: /*#1a2a6c*/ #0C8ED7;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  overflow: hidden;
+  font-family: sans-serif;
+  height: 97.5vh;
+}
+.store {
+  background: rgba(96, 96, 96, 0.7);
+  height: 280px;
+  width: 312px;
+  padding: 10px 20px;
+}
+h2 {
+  color: white;
+  font-size: 37px;
+  margin-top: 10px;
+}
+span {
+  font-size: 17px;
+}
+.one {
+  height: 70px;
+}
+.one {
+  margin-top: 22px;
+}
+.one p {
+  margin-top: 7px;
+}
+.store .terms {
+  font-size: 11.5px;
+  margin-top: 21px;
+}
+button {
+  position: relative;
+  top: -15px;
+  border-radius: 2px;
+  background: var(--button, /*#007bff*/);
+  color: white;
+  height: 41px;
+  width: 128px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 15.5px;
+  margin-top: 46px;
+  z-index: 5;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+button:active {
+  opacity: 0.8;
+}
+.btn-a {
+  text-decoration: none !important;
+  color: white !important;
+}
+a {
+  text-decoration: underline;
+}
+span, a{
+  color: var(--text);
+}
+p {
+  color: white;
+}
